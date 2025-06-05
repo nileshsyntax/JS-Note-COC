@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Golang</li>
+    </ul>
+</body>
+<script>
+
+    // Genereal Methods...
+    // function addLanguage(langName){
+    //     const li = document.createElement('li');
+    //     li.innerHTML = `${langName}`;
+    //     document.querySelector('.language').appendChild(li);
+    // }
+    // addLanguage('Rust');
+    // addLanguage('Typescript');
+
+    // Optimised approach/methods... this is preferable for optimization
+    function addOptiLang(langName) {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);
+    }
+    addOptiLang('C++');
+    addOptiLang('Typescript');
+    addOptiLang('Python');
+
+    // Editing DOM
+    const secondLang = document.querySelector("li:nth-child(2)");
+    const newli = document.createElement('li');
+    newli.textContent = "Rust";
+    secondLang.replaceWith(newli);
+
+    // Editing another method
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML = '<li>TypeScript</li>'
+
+    // remove element
+    const lastLang = document.querySelector('li:last-child');
+    lastLang.remove();
+</script>
+</html>
