@@ -49,8 +49,16 @@
 {    /* Text Note
 
     
-    The new constructor: 
+    The new constructor vs literal methods
     
+    Declaring array using literal methods is Simple and readable, Fast and safe.
+    new constructor creates same array but behaves differently.
+    
+    new Array(5);       // creates array of length 5 (empty slots)
+    [5];                // creates array with one element: 5
+
+
+
     slice() creates a new array with a portion of elements copied from the original array
     splice() mutates the original array itself by removing, replacing or adding elements to it
 
